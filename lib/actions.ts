@@ -82,7 +82,6 @@ export const createNewProject = async (form: ProjectForm, creatorId: string, tok
 
 export const fetchAllProjects = async (category?: string, endcursor?: string) => {
   client.setHeader('x-api-key', apiKey);
-  console.log(`EndCursor in fetchAllProjects: ${endcursor}`)
   return makeGraphQLRequest(projectsQuery, { category, endcursor })
 }
 
@@ -127,8 +126,6 @@ export const updateProject = async (form: ProjectForm, projectId: string, token:
   client.setHeader('x-api-key', apiKey)
   client.setHeader('Authorization', `Bearer ${token}`);
   const id = parseInt(projectId, 10)
-
-  console.log(updatedForm.imageUrl)
 
   const variables = {
     projectId: id,

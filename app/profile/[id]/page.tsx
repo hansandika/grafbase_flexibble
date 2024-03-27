@@ -1,7 +1,6 @@
 import { UserProfile } from "@/common.types"
 import ProfilePage from "@/components/ProfilePage"
 import { getUserProject } from "@/lib/actions"
-import { teardownHeapProfiler } from "next/dist/build/swc"
 
 type Props = {
   params: {
@@ -20,4 +19,4 @@ const Profile = async ({ params: { id } }: Props) => {
   )
 }
 
-export default teardownHeapProfiler
+export default Profile

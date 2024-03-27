@@ -36,7 +36,6 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session }) {
       const email = session.user?.email as string;
-      console.log(`email : ${email}`)
       try {
         const data = await getUser(email) as { pg: { users: UserProfile } };
         const newSession = {

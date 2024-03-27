@@ -15,8 +15,6 @@ const LoadMore = ({ startCursor, endCursor, hasPreviousPage, hasNextPage }: Prop
 
   const handleNavigation = (direction: string) => () => {
     const currentParams = new URLSearchParams(window.location.search);
-    console.log(`Window Location: ${window.location.search}`)
-    console.log(`currentParams: ${currentParams}`)
     if (direction === 'next' && hasNextPage) {
       currentParams.delete("startcursor");
       currentParams.set("endcursor", endCursor);
