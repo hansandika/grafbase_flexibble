@@ -12,21 +12,22 @@ export type FormState = {
 export interface ProjectInterface {
   title: string;
   description: string;
-  image: string;
+  imageUrl: string;
   liveSiteUrl: string;
   githubUrl: string;
   category: string;
-  id: string;
-  createdBy: {
+  projectId: string;
+  createdBy: string;
+  users: {
+    userId: string;
     name: string;
     email: string;
     avatarUrl: string;
-    id: string;
   };
 }
 
 export interface UserProfile {
-  id: string;
+  userId: string;
   name: string;
   email: string;
   description: string | null;
@@ -46,7 +47,7 @@ export interface UserProfile {
 
 export interface SessionInterface extends Session {
   user: User & {
-    id: string;
+    userId: string;
     name: string;
     email: string;
     avatarUrl: string;
@@ -56,7 +57,7 @@ export interface SessionInterface extends Session {
 export interface ProjectForm {
   title: string;
   description: string;
-  image: string;
+  imageUrl: string;
   liveSiteUrl: string;
   githubUrl: string;
   category: string;
